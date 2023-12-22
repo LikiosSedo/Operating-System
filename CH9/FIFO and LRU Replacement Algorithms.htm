@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0046)http://zoo.cs.yale.edu/classes/cs423/lab4.html -->
+<html class="gr__people_westminstercollege_edu gr__zoo_cs_yale_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>FIFO and LRU Replacement Algorithms</title>
+  </head>
+  <body data-gr-c-s-loaded="true">
+    <span style="font-weight: bold;">CPSC 423/523 Operating Systems</span><br style="font-weight: bold;">
+    <b>Spring 2017</b><b><br>
+    </b><b><br>
+    </b><b>Lab #4 - Virtual Memory (FIFO and LRU Page Replacement)</b><b><br>
+      <br>
+      Due Date: April 21, 2017, 11:55 PM<br>
+    </b><br>
+    
+    <hr size="2" width="100%"><br>
+
+    Write a program that implements the FIFO and LRU page replacement
+    algorithms. First, generate a random page-reference string where
+    page numbers range from 0 ... 9. Apply the random page-reference
+    string to each algorithm, and record the number of page faults
+    incurred by each algorithm. Implement the replacement algorithms so
+    that the number of page frames can vary as well. Assume that demand
+    paging is used.<br>
+    <br>
+    Your algorithms will be based on the following abstract class:<br>
+    <br>
+    - <a target="_blank" href="http://zoo.cs.yale.edu/classes/cs423/code/ReplacementAlgorithm.java">ReplacementAlgorithm.java</a><br>
+    <br>
+    Implement two classes -&nbsp; FIFO and LRU - that extend <big><span style="font-family: monospace;">ReplacementAlgorithm</span></big>.
+    Each of these classes will implement the <big><span style="font-family: monospace;">insert()</span></big> method,
+    one according to FIFO, the other according to LRU. These classes
+    have been started for you:<br>
+    <br>
+    - <a href="http://zoo.cs.yale.edu/classes/cs423/code/FIFO.java">FIFO.java</a><br>
+    <br>
+    - <a href="http://zoo.cs.yale.edu/classes/cs423/code/LRU.java">LRU.java</a><br>
+    <br>
+    The FIFO algorithm should be straightforward, LRU is a bit trickier.
+    One way to think of it is by maintaining your list of page frames in
+    LRU order, which requires shuffling the list such that the
+    least-recently-used frame is always at one end of the list.<br>
+    <br>
+    There are a few other classes that you may find useful:<br>
+    <br>
+    - <a target="_blank" href="http://zoo.cs.yale.edu/classes/cs423/code/PageGenerator.java">PageGenerator.java
+    </a>A class that generates page reference strings with page numbers
+    ranging from 0 ... 9. The size of the reference string is passed to
+    the <big><span style="font-family: monospace;">PageGenerator</span></big>
+    constructor. Once a <big><span style="font-family: monospace;">PageGenerator</span></big>
+    object is constructed, the <big><span style="font-family:
+        monospace;">getReferenceString()</span></big> method returns the
+    reference string as an array of integers.<br>
+    <br>
+    You will notice the <big><tt>getReferenceString()</tt></big> method
+    currently returns the reference string
+    
+    <tt><small><b style="font-family: Times; font-size: medium;
+          font-style: normal; font-variant: normal; letter-spacing:
+          normal; line-height: normal; text-align: start; text-indent:
+          0px; text-transform: none; white-space: normal; widows: 1;
+          word-spacing: 0px;"><font size="+1"><small>7 0 1 2 0 3 0 4 2 3
+              0 3 2 1 2 0 1 7 0 1</small></font></b></small></tt><br>
+    <br>
+    - <a target="_blank" href="http://zoo.cs.yale.edu/classes/cs423/code/Test.java">Test.java</a> This is used
+    to test your FIFO and LRU implementations. This is invoked as<br>
+    <br>
+    <div style="margin-left: 40px;"><big><span style="font-family:
+          monospace;">java Test &lt;reference string size&gt; &lt;number
+          of page frames&gt;</span></big><br>
+    </div>
+    <br>
+    Once you have implemented the FIFO and LRU algorithms, experiment
+    with a different number of page frames for a given reference string
+    and record the number of page faults. Does one algorithm perform
+    better than the other? Is there an optimal number of page frames for
+    a given reference string size?  Explain.  Submit your answer in a text file.
+    <p>
+    Important note:  I must be able to place the version of Test.java on the zoo in a folder with your submitted code and compile.  If this does not work, you will be asked to resubmit. <br>
+    <br>
+------------------------------------------------------------------------<br>
+    <b>Submission</b><br>
+    &nbsp;<br>
+
+    Submit two programs (FIFO and LRU) on the Classes*v2 for Lab 4.<br>
+   
+    <br>
+
+------------------------------------------------------------------------<br>
+    <b>Acknowledgements: This lab is heavily based on Greg Gagne's course
+        CMPT 351 Operating Systems.</b> 
+      
+    <br>
+
+    <br>
+  
+
+
+</p></body></html>
